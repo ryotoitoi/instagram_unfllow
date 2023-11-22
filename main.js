@@ -6,14 +6,19 @@ function findButtonByText(text) {
 
 let lastScrollTime = Date.now();
 
+// モーダル要素を特定
+const modalContent = document.querySelector('div._aano');
+
 // ボタンを定期的にチェックして操作を行う
 const interval = setInterval(() => {
     // 現在の時刻
     const now = Date.now();
 
-    // 10秒ごとにスクロール
+    // 10秒ごとにモーダル内をスクロール
     if (now - lastScrollTime >= 10000) {
-        window.scrollBy(0, 500); // 500ピクセル下へスクロール
+        if (modalContent) {
+            modalContent.scrollTop += 500; // モーダル内を500ピクセル下へスクロール
+        }
         lastScrollTime = now;
     }
 
