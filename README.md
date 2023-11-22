@@ -1,0 +1,2 @@
+# instagram_unfllow
+自分のフォローしているユーザーを自動でUnfllowしてくためのスクリプト。
