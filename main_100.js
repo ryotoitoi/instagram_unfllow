@@ -15,9 +15,9 @@ const interval = setInterval(() => {
     const now = Date.now();
 
     // 1000秒ごとにモーダル内をスクロール（約16分40秒）
-    if (now - lastScrollTime >= 1000000) {
+    if (now - lastScrollTime >= 10000) {
         if (modalContent) {
-            modalContent.scrollTop += 500; // モーダル内を500ピクセル下へスクロール
+            modalContent.scrollTop += 200; // モーダル内を500ピクセル下へスクロール
         }
         lastScrollTime = now;
     }
@@ -33,11 +33,11 @@ const interval = setInterval(() => {
             if (unfollowButton) {
                 unfollowButton.click();
             }
-        }, 100000); // 100秒待つ
+        }, 1000); // 100秒待つ
     } else {
         console.log('フォロー中ボタンが見つかりません。');
     }
-}, 300000); // 300秒（5分）ごとにチェック
+}, 3000); // 300秒（5分）ごとにチェック
 
 // 実行を停止する場合
 // clearInterval(interval);
